@@ -3,11 +3,14 @@ package fr.gregwl.gregsteamsmp.commands;
 import fr.gregwl.gregsteamsmp.GregsTeamSMP;
 import fr.gregwl.gregsteamsmp.commands.teamsub.*;
 import fr.gregwl.gregsteamsmp.commands.teamsub.claims.TeamClaim;
+import fr.gregwl.gregsteamsmp.commands.teamsub.claims.TeamRadiusClaim;
 import fr.gregwl.gregsteamsmp.commands.teamsub.claims.TeamUnclaim;
 import fr.gregwl.gregsteamsmp.commands.teamsub.invite.TeamInvite;
 import fr.gregwl.gregsteamsmp.commands.teamsub.invite.TeamJoin;
 import fr.gregwl.gregsteamsmp.commands.teamsub.leave.TeamKick;
 import fr.gregwl.gregsteamsmp.commands.teamsub.leave.TeamLeave;
+import fr.gregwl.gregsteamsmp.commands.teamsub.map.TeamMap;
+import fr.gregwl.gregsteamsmp.commands.teamsub.map.TeamScoreboard;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -30,6 +33,9 @@ public class TeamCommand implements TabExecutor {
         subCommands.add(new TeamLeave());
         subCommands.add(new TeamClaim());
         subCommands.add(new TeamUnclaim());
+        subCommands.add(new TeamScoreboard());
+        subCommands.add(new TeamMap());
+        subCommands.add(new TeamRadiusClaim());
 
         //pour rajouter des sous-commande de la commande "team", juste ajouter une ligne comme ci-dessus, puis
         //faire la class

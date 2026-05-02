@@ -4,6 +4,7 @@ import fr.gregwl.gregsteamsmp.GregsTeamSMP;
 import fr.gregwl.gregsteamsmp.files.ClaimSerializationManager;
 import fr.gregwl.gregsteamsmp.files.FileUtils;
 import fr.gregwl.gregsteamsmp.files.PlayerSerializationManager;
+import fr.gregwl.gregsteamsmp.map.ScoreboardMapManager;
 import fr.gregwl.gregsteamsmp.objects.Claim;
 import fr.gregwl.gregsteamsmp.objects.PlayerList;
 import org.bukkit.Chunk;
@@ -12,6 +13,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
@@ -83,10 +85,15 @@ public class ClaimEventHandler implements Listener {
                     player.sendTitle("§4§lCaution !", "§fYou enter a chunk held by the§l " + teamChunkTo);
                 }
             } else if(claims.getChunks().containsKey(chunkIDFrom) && !claims.getChunks().containsKey(chunkIDTo)) {
-                player.sendTitle("§4§lCaution !", "§fYou enter in Wilderness");
+                player.sendTitle("§a§lCaution !", "§fYou enter in Wilderness");
             } else {
 
             }
         }
+    }
+
+    @EventHandler
+    public void onQuit(PlayerQuitEvent e) {
+        ScoreboardMapManager.cleanup(e.getPlayer());
     }
 }

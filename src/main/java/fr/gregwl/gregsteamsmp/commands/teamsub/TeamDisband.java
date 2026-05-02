@@ -1,10 +1,8 @@
 package fr.gregwl.gregsteamsmp.commands.teamsub;
 
 import fr.gregwl.gregsteamsmp.GregsTeamSMP;
-import fr.gregwl.gregsteamsmp.files.FileUtils;
-import fr.gregwl.gregsteamsmp.files.PlayerSerializationManager;
-import fr.gregwl.gregsteamsmp.files.TeamOwnersSerializationManager;
-import fr.gregwl.gregsteamsmp.files.TeamSerializationManager;
+import fr.gregwl.gregsteamsmp.files.*;
+import fr.gregwl.gregsteamsmp.objects.Claim;
 import fr.gregwl.gregsteamsmp.objects.PlayerList;
 import fr.gregwl.gregsteamsmp.objects.Team;
 import fr.gregwl.gregsteamsmp.objects.TeamOwners;
@@ -47,6 +45,11 @@ public class TeamDisband extends fr.gregwl.gregsteamsmp.commands.SubCommand {
             final String ownerJsonExport = FileUtils.loadContent(file1);
             final TeamOwners teamOwners = teamOwnersSerializationManager.deserialize(ownerJsonExport);
 
+            final File fileClaimsList = new File(saveDir, "claims.json");
+            final ClaimSerializationManager claimSerializationManager = GregsTeamSMP.getInstance().getClaimSerializationManager();
+            final String claimJsonExport = FileUtils.loadContent(fileClaimsList);
+            final Claim claims = claimSerializationManager.deserialize(claimJsonExport);
+
             final PlayerSerializationManager playerSerializationManager = GregsTeamSMP.getInstance().getPlayerSerializationManager();
             final String playersJsonExport = FileUtils.loadContent(filePlayerList);
             final PlayerList playerList = playerSerializationManager.deserialize(playersJsonExport);
@@ -80,6 +83,13 @@ public class TeamDisband extends fr.gregwl.gregsteamsmp.commands.SubCommand {
                 for(int i = 0; i < members.size(); i++) {
                     Player currentPlayer = Bukkit.getPlayer(members.get(i));
                     playerList.getPlayerList().remove(currentPlayer.getName());
+                }
+
+                if (claims.getChunks().containsValue(teamName)) {
+                    claims.getChunks().entrySet().removeIf(entry -> entry.getValue().equals(teamName));
+
+                    final String claimJson = claimSerializationManager.serialize(claims);
+                    FileUtils.save(fileClaimsList, claimJson);
                 }
 
                 final String playerJson = playerSerializationManager.serialize(playerList);

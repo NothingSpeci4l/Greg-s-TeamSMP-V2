@@ -18,7 +18,7 @@ public final class GregsTeamSMP extends JavaPlugin{
     private TeamOwnersSerializationManager teamOwnersSerializationManager;
     private PlayerSerializationManager playerSerializationManager;
     private ClaimSerializationManager claimSerializationManager;
-    public static String msgPrefix = ("§f[§1§lGreg's§b TeamSMP§f] ");
+    public static String msgPrefix = ("§f[§x§0§0§8§D§F§F§l§nG§x§0§F§8§2§F§F§l§nr§x§1§F§7§7§F§F§l§ne§x§2§E§6§C§F§F§l§ng§x§3§E§6§2§F§F§l§n'§x§4§D§5§7§F§F§l§ns §x§6§C§4§1§F§F§l§nT§x§7§B§3§6§F§F§l§ne§x§8§A§2§B§F§F§l§na§x§9§A§2§1§F§F§l§nm§x§A§9§1§6§F§F§l§nS§x§B§9§0§B§F§F§l§nM§x§C§8§0§0§F§F§l§nP§f] ");
     public static HashMap<String, String> invitedTeamPlayers = new HashMap<>();
 
     @Override
