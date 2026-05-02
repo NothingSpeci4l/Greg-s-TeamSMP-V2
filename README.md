@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Author-Chifouuu-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/Author-Gregwll-blue?style=flat-square">
   <img src="https://img.shields.io/badge/Written%20In-Java-orange?style=flat-square">
 </p>
 
