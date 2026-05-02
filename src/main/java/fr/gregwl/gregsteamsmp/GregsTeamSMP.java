@@ -5,6 +5,8 @@ import fr.gregwl.gregsteamsmp.commands.TeamCommand;
 import fr.gregwl.gregsteamsmp.files.*;
 import fr.gregwl.gregsteamsmp.objects.Claim;
 import fr.gregwl.gregsteamsmp.objects.PlayerList;
+import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -60,6 +62,13 @@ public final class GregsTeamSMP extends JavaPlugin{
             FileUtils.save(fileClaimsList, jsonClaims);
         }
 
+        int pluginId = 31053;
+        Metrics metrics = new Metrics(this, pluginId);
+
+        // Optional: Add custom charts
+        metrics.addCustomChart(
+                new SimplePie("chart_id", () -> "My value")
+        );
 
     }
 
