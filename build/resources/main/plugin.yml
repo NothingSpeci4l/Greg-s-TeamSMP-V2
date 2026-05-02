@@ -1,8 +1,12 @@
 name: GregsTeamSMP
-version: '1.0-Release'
+author: Gregwll
+version: '1.2-Release'
 main: fr.gregwl.gregsteamsmp.GregsTeamSMP
 api-version: '1.21'
 commands:
   team:
     description: main command from the plugin for no-op actions
+
+# This project is forked on the GitHub acc called NothingSpeci4l because I lost my old acc Chifouuu.
+# A lot of thank to Serialmielpops for his fork that implements support for cracked players.
 

@@ -1,9 +1,6 @@
 package fr.gregwl.gregsteamsmp.objects;
 
-import org.bukkit.entity.Player;
-
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Team {
     private String teamName;

@@ -1,7 +1,6 @@
 package fr.gregwl.gregsteamsmp.objects;
 
 import java.util.HashMap;
-import java.util.UUID;
 
 public class TeamOwners {
 
