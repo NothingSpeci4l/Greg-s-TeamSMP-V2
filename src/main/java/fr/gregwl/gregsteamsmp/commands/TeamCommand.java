@@ -1,6 +1,7 @@
 package fr.gregwl.gregsteamsmp.commands;
 
 import fr.gregwl.gregsteamsmp.GregsTeamSMP;
+import fr.gregwl.gregsteamsmp.commands.teamsub.ad.TeamAdmin;
 import fr.gregwl.gregsteamsmp.commands.teamsub.*;
 import fr.gregwl.gregsteamsmp.commands.teamsub.claims.TeamClaim;
 import fr.gregwl.gregsteamsmp.commands.teamsub.claims.TeamRadiusClaim;
@@ -36,6 +37,7 @@ public class TeamCommand implements TabExecutor {
         subCommands.add(new TeamScoreboard());
         subCommands.add(new TeamMap());
         subCommands.add(new TeamRadiusClaim());
+        subCommands.add(new TeamAdmin());
 
         //pour rajouter des sous-commande de la commande "team", juste ajouter une ligne comme ci-dessus, puis
         //faire la class
