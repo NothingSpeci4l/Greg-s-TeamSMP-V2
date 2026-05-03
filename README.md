@@ -6,7 +6,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Author-Gregwll-blue?style=flat-square">
   <img src="https://img.shields.io/badge/Written%20In-Java-orange?style=flat-square">
-  <img src="https://img.shields.io/tokei/lines/github/NothingSpeci4l/Greg-s-TeamSMP-V2">
+  <img src="https://img.shields.io/badge/lines%20of%20code-2020-blue">
 </p>
 
 # Greg-s-TeamSMP
